@@ -1,0 +1,5 @@
+{
+  "name": "Treasure Hunt: Mountain Climb",
+  "description": "A turn-based multiplayer trivia game where players climb a mountain, answer questions (supports MathJax), and face lucky/unlucky draws. Features AI-powered question generation.",
+  "requestFramePermissions": []
+}

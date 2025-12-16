@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Đi Tìm Kho Báu - Đường Leo Núi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              hand: ['"Patrick Hand"', 'cursive'],
+              sans: ['"Nunito"', 'sans-serif'],
+            },
+            colors: {
+              ghibli: {
+                sky: '#E0F7FA',
+                cloud: '#FFFFFF',
+                grass: '#C8E6C9',
+                wood: '#8D6E63',
+                flower: '#FFCCBC',
+                cream: '#FFF9C4',
+                dark: '#455A64'
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        svg: {
+          fontCache: 'global'
+        }
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+      body {
+        font-family: 'Nunito', sans-serif;
+        background: linear-gradient(180deg, #A1C4FD 0%, #C2E9FB 100%);
+        background-attachment: fixed;
+        color: #37474F;
+        min-height: 100vh;
+      }
+      
+      /* Clouds Background Pattern */
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+          radial-gradient(white 15%, transparent 16%),
+          radial-gradient(white 15%, transparent 16%);
+        background-size: 60px 60px;
+        background-position: 0 0, 30px 30px;
+        opacity: 0.3;
+        z-index: -1;
+        pointer-events: none;
+      }
+
+      /* Soft Ghibli Button */
+      .btn-ghibli {
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        border-radius: 9999px; /* Pill shape */
+        position: relative;
+        overflow: hidden;
+      }
+      .btn-ghibli:hover {
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      }
+      .btn-ghibli:active {
+        transform: translateY(1px) scale(0.98);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      }
+
+      /* Custom scrollbar */
+      .scrollbar-cute::-webkit-scrollbar {
+        width: 10px;
+      }
+      .scrollbar-cute::-webkit-scrollbar-track {
+        background: rgba(255,255,255,0.4);
+        border-radius: 10px;
+      }
+      .scrollbar-cute::-webkit-scrollbar-thumb {
+        background: #90A4AE;
+        border-radius: 10px;
+        border: 2px solid transparent;
+        background-clip: content-box;
+      }
+
+      /* 3D Card Flip Utilities */
+      .perspective-1000 {
+        perspective: 1000px;
+      }
+      
+      .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy flip */
+        transform-style: preserve-3d;
+      }
+      
+      .flip-card-front, .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-radius: 20px;
+      }
+      
+      .flip-card-back {
+        transform: rotateY(180deg);
+      }
+      
+      .is-flipped {
+        transform: rotateY(180deg);
+      }
+
+      /* Floating Animation */
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+      }
+      .animate-float {
+        animation: float 4s ease-in-out infinite;
+      }
+      .perspective-1000 {
+        perspective: 1000px;
+      }
+
+      .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        transition: transform 0.7s ease;
+        overflow: visible;
+      }
+
+      .flip-card-inner.is-flipped {
+        transform: rotateY(180deg);
+      }
+
+      .flip-card-front,
+      .flip-card-back {
+        position: absolute;
+        inset: 0;
+        backface-visibility: hidden;
+        border-radius: 24px;
+      }
+
+      .flip-card-back {
+        transform: rotateY(180deg);
+      }
+
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
